@@ -9,6 +9,7 @@ import * as createRestoreEndpointFromIsolationTask from './createRestoreEndpoint
 import * as deleteCustomRule from './deleteCustomRule.operation';
 import * as getBlocklistItems from './getBlocklistItems.operation';
 import * as getCustomRulesList from './getCustomRulesList.operation';
+import * as getIncident from './getIncident.operation';
 import * as getResponseActionStatus from './getResponseActionStatus.operation';
 import * as getSimilarEmails from './getSimilarEmails.operation';
 import * as removeFromBlocklist from './removeFromBlocklist.operation';
@@ -25,6 +26,7 @@ export {
 	deleteCustomRule,
 	getBlocklistItems,
 	getCustomRulesList,
+	getIncident,
 	getResponseActionStatus,
 	getSimilarEmails,
 	removeFromBlocklist,
@@ -90,6 +92,11 @@ export const description: INodeProperties[] = [
 				action: 'List existing custom rules',
 			},
 			{
+				name: 'Get Incident',
+				value: 'getIncident',
+				action: 'Get details about an incident',
+			},
+			{
 				name: 'Get Response Action Status',
 				value: 'getResponseActionStatus',
 				action: 'Get the status of a response action',
@@ -125,6 +132,7 @@ export const description: INodeProperties[] = [
 	...deleteCustomRule.description,
 	...getBlocklistItems.description,
 	...getCustomRulesList.description,
+	...getIncident.description,
 	...getResponseActionStatus.description,
 	...getSimilarEmails.description,
 	...removeFromBlocklist.description,

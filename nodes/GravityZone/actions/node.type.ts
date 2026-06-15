@@ -19,6 +19,7 @@ type NodeMap = {
 		| 'createRestoreEndpointFromIsolationTask'
 		| 'createCustomRule'
 		| 'getCustomRulesList'
+		| 'getIncident'
 		| 'updateCustomRule'
 		| 'deleteCustomRule'
 		| 'changeIncidentStatus'

@@ -61,6 +61,7 @@ The node supports the following actions grouped by their respective category:
 - Delete Custom Rule
 - Get Blocklist Items
 - Get Custom Rules List
+- Get Incident
 - Get Response Action Status
 - Get Similar Emails
 - Remove From Blocklist

@@ -3,7 +3,7 @@
     "version": "0.1.6",
     "description": "Custom n8n node which models the Bitdefender GravityZone public API.",
     "license": "MIT",
-    "homepage": "https://github.com/DainArtz/n8n-nodes-gravityzone",
+    "homepage": "https://github.com/bitdefender/n8n-nodes-gravityzone",
     "keywords": [
         "n8n-community-node-package",
         "bitdefender",
@@ -11,13 +11,13 @@
         "cybersecurity"
     ],
     "author": {
-        "name": "Calin Balan",
-        "email": "calin.balan03@gmail.com",
-        "url": "https://github.com/DainArtz"
+        "name": "Calin BALAN",
+        "email": "cabalan@bitdefender.com",
+        "url": "https://github.com/cabalan-bd"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/DainArtz/n8n-nodes-gravityzone.git"
+        "url": "https://github.com/bitdefender/n8n-nodes-gravityzone.git"
     },
     "scripts": {
         "build": "n8n-node build",

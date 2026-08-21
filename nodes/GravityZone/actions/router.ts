@@ -3,6 +3,7 @@ import { NodeOperationError } from 'n8n-workflow';
 
 import * as accounts from './accounts';
 import * as companies from './companies';
+import * as custom from './custom';
 import * as general from './general';
 import * as incidents from './incidents';
 import * as integrations from './integrations';
@@ -35,6 +36,9 @@ export async function router(
 			break;
 		case 'companies':
 			executionData = await companies[gravityZoneData.operation].execute.call(this, itemIndex);
+			break;
+		case 'custom':
+			executionData = await custom[gravityZoneData.operation].execute.call(this, itemIndex);
 			break;
 		case 'general':
 			executionData = await general[gravityZoneData.operation].execute.call(this, itemIndex);

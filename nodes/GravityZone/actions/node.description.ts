@@ -3,6 +3,7 @@ import { NodeConnectionTypes, type INodeTypeDescription } from 'n8n-workflow';
 
 import * as accounts from './accounts';
 import * as companies from './companies';
+import * as custom from './custom';
 import * as general from './general';
 import * as incidents from './incidents';
 import * as integrations from './integrations';
@@ -47,6 +48,7 @@ export const description: INodeTypeDescription = {
 			options: [
 				{ name: 'Accounts', value: 'accounts' },
 				{ name: 'Companies', value: 'companies' },
+				{ name: 'Custom', value: 'custom' },
 				{ name: 'General', value: 'general' },
 				{ name: 'Incidents', value: 'incidents' },
 				{ name: 'Integrations', value: 'integrations' },
@@ -65,6 +67,7 @@ export const description: INodeTypeDescription = {
 		},
 		...accounts.description,
 		...companies.description,
+		...custom.description,
 		...general.description,
 		...incidents.description,
 		...integrations.description,

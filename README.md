@@ -45,6 +45,10 @@ The node supports the following actions grouped by their respective category:
 - Get Details
 - Update Details
 
+### Custom
+
+- Custom
+
 ### General
 
 - Generate Email Verification Code

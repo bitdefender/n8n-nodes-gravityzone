@@ -10,6 +10,7 @@ type NodeMap = {
 		| 'getNotificationsSettings'
 		| 'configureNotificationsSettings';
 	companies: 'getCompanyDetails' | 'updateCompanyDetails';
+	custom: 'custom';
 	general: 'getApiKeyDetails' | 'generateEmailVerificationCode';
 	incidents:
 		| 'addToBlocklist'

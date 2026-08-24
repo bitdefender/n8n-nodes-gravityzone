@@ -85,11 +85,11 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	if (options.page !== undefined) params.page = options.page;
 	if (options.perPage !== undefined) params.perPage = options.perPage;
 	if (options.filters !== undefined) {
-		const filters = processJsonInput(options.filters, 'Filters') as IDataObject;
+		const filters = processJsonInput(this, options.filters, 'Filters') as IDataObject;
 		if (Object.keys(filters).length > 0) params.filters = filters;
 	}
 	if (options.queryOptions !== undefined) {
-		const queryOptions = processJsonInput(options.queryOptions, 'Options') as IDataObject;
+		const queryOptions = processJsonInput(this, options.queryOptions, 'Options') as IDataObject;
 		if (Object.keys(queryOptions).length > 0) params.options = queryOptions;
 	}
 

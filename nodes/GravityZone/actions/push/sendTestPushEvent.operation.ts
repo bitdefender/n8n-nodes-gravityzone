@@ -94,7 +94,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	const params: IDataObject = { eventType };
 
 	if (options.dataJson !== undefined) {
-		params.data = processJsonInput(options.dataJson, 'Data') as IDataObject;
+		params.data = processJsonInput(this, options.dataJson, 'Data') as IDataObject;
 	}
 
 	const responseData = await gravityZoneApiRequest.call(this, 'push', 'sendTestPushEvent', params);

@@ -62,7 +62,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	const apiVersion = this.getNodeParameter('apiVersion', i) as string;
 	const endpoint = this.getNodeParameter('endpoint', i) as string;
 	const method = this.getNodeParameter('method', i) as string;
-	const params = processJsonInput(this.getNodeParameter('params', i), 'Parameters') as IDataObject;
+	const params = processJsonInput(this, this.getNodeParameter('params', i), 'Parameters') as IDataObject;
 
 	const responseData = await gravityZoneApiRequest.call(this, endpoint, method, params, apiVersion);
 

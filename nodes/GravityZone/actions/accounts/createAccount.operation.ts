@@ -158,14 +158,14 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	if (additionalFields.password) params.password = additionalFields.password;
 	if (additionalFields.role !== undefined) params.role = additionalFields.role;
 	if (additionalFields.phoneNumberJson !== undefined) {
-		const phoneNumber = processJsonInput(
+		const phoneNumber = processJsonInput(this,
 			additionalFields.phoneNumberJson,
 			'Phone Number',
 		) as IDataObject;
 		if (Object.keys(phoneNumber).length > 0) params.phoneNumber = phoneNumber;
 	}
 	if (additionalFields.rightsJson !== undefined) {
-		const rights = processJsonInput(additionalFields.rightsJson, 'Rights') as IDataObject;
+		const rights = processJsonInput(this, additionalFields.rightsJson, 'Rights') as IDataObject;
 		if (Object.keys(rights).length > 0) params.rights = rights;
 	}
 	if (additionalFields.targetIds) {

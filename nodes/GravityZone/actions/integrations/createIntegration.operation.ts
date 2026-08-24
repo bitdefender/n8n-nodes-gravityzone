@@ -61,7 +61,7 @@ export const description = updateDisplayOptions(displayOptions, properties);
 export async function execute(this: IExecuteFunctions, i: number): Promise<INodeExecutionData[]> {
 	const name = this.getNodeParameter('name', i) as string;
 	const type = this.getNodeParameter('type', i) as number;
-	const specifics = processJsonInput(
+	const specifics = processJsonInput(this,
 		this.getNodeParameter('specificsJson', i),
 		'Specifics',
 	) as IDataObject;

@@ -173,14 +173,14 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 		params.profile = profile;
 	}
 	if (updateFields.phoneNumberJson !== undefined) {
-		const phoneNumber = processJsonInput(
+		const phoneNumber = processJsonInput(this,
 			updateFields.phoneNumberJson,
 			'Phone Number',
 		) as IDataObject;
 		if (Object.keys(phoneNumber).length > 0) params.phoneNumber = phoneNumber;
 	}
 	if (updateFields.rightsJson !== undefined) {
-		const rights = processJsonInput(updateFields.rightsJson, 'Rights') as IDataObject;
+		const rights = processJsonInput(this, updateFields.rightsJson, 'Rights') as IDataObject;
 		if (Object.keys(rights).length > 0) params.rights = rights;
 	}
 	if (updateFields.targetIds) {

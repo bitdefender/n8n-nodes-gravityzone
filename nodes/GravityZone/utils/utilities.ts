@@ -1,4 +1,4 @@
-import { ApplicationError, IDataObject, IDisplayOptions, INodeExecutionData, INodeProperties, jsonParse } from "n8n-workflow";
+import { IDataObject, IDisplayOptions, IExecuteFunctions, INodeExecutionData, INodeProperties, NodeOperationError, jsonParse } from "n8n-workflow";
 
 type PlainObject = Record<string, unknown>;
 
@@ -43,9 +43,9 @@ export function updateDisplayOptions(
 	});
 }
 
-export function processJsonInput<T>(jsonData: T, inputName?: string) {
+export function processJsonInput<T>(ctx: IExecuteFunctions, jsonData: T, inputName?: string) {
 	let values;
-    
+
 	const input = inputName ? `'${inputName}' ` : '';
 
 	if (typeof jsonData === 'string') {
@@ -53,13 +53,12 @@ export function processJsonInput<T>(jsonData: T, inputName?: string) {
 			values = jsonParse(jsonData);
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		} catch (error) {
-			// eslint-disable-next-line @n8n/community-nodes/require-node-api-error
-			throw new ApplicationError(`Input ${input} must contain a valid JSON`, { level: 'warning' });
+			throw new NodeOperationError(ctx.getNode(), `Input ${input} must contain a valid JSON`);
 		}
 	} else if (typeof jsonData === 'object') {
 		values = jsonData;
 	} else {
-		throw new ApplicationError(`Input ${input} must contain a valid JSON`, { level: 'warning' });
+		throw new NodeOperationError(ctx.getNode(), `Input ${input} must contain a valid JSON`);
 	}
 
 	return values;

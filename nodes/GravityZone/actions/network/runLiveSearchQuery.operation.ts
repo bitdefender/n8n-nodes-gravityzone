@@ -82,7 +82,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	const query = this.getNodeParameter('query', i) as string;
 	const options = this.getNodeParameter('options', i, {});
 
-	const s3UploadConfig = processJsonInput(
+	const s3UploadConfig = processJsonInput(this,
 		this.getNodeParameter('s3UploadConfig', i),
 		'S3 Upload Config',
 	) as IDataObject;

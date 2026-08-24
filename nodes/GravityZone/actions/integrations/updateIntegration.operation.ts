@@ -65,7 +65,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 
 	if (options.name) params.name = options.name;
 	if (options.specificsJson !== undefined) {
-		const specifics = processJsonInput(options.specificsJson, 'Specifics') as IDataObject;
+		const specifics = processJsonInput(this, options.specificsJson, 'Specifics') as IDataObject;
 		if (Object.keys(specifics).length > 0) params.specifics = specifics;
 	}
 

@@ -117,7 +117,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	if (options.emailId !== undefined && options.emailId !== '') params.emailId = options.emailId;
 	if (options.fileUrl !== undefined && options.fileUrl !== '') params.fileUrl = options.fileUrl;
 	if (options.integrationIdentifiers !== undefined) {
-		const integrationIdentifiers = processJsonInput(
+		const integrationIdentifiers = processJsonInput(this,
 			options.integrationIdentifiers,
 			'Integration Identifiers',
 		) as IDataObject;
@@ -125,7 +125,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 			params.integrationIdentifiers = integrationIdentifiers;
 	}
 	if (options.targets !== undefined) {
-		const targets = processJsonInput(options.targets, 'Targets') as IDataObject;
+		const targets = processJsonInput(this, options.targets, 'Targets') as IDataObject;
 		if (Object.keys(targets).length > 0) params.targets = targets;
 	}
 

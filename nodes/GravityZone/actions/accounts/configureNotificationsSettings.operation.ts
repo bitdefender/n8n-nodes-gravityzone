@@ -116,7 +116,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	}
 
 	if (options.notificationsSettingsJson !== undefined) {
-		const notificationsSettings = processJsonInput(
+		const notificationsSettings = processJsonInput(this,
 			options.notificationsSettingsJson,
 			'Notifications Settings',
 		) as IDataObject[];

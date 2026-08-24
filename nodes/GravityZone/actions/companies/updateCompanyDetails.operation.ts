@@ -331,14 +331,14 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	if (options.enforce2FA !== undefined) params.enforce2FA = options.enforce2FA;
 	if (options.skip2FAPeriod !== undefined) params.skip2FAPeriod = options.skip2FAPeriod;
 	if (options.contactPersonJson !== undefined) {
-		const contactPerson = processJsonInput(
+		const contactPerson = processJsonInput(this,
 			options.contactPersonJson,
 			'Contact Person',
 		) as IDataObject;
 		if (Object.keys(contactPerson).length > 0) params.contactPerson = contactPerson;
 	}
 	if (options.mdrContactInformationJson !== undefined) {
-		const mdrContactInformation = processJsonInput(
+		const mdrContactInformation = processJsonInput(this,
 			options.mdrContactInformationJson,
 			'MDR Contact Information',
 		) as IDataObject;

@@ -134,7 +134,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	const params: IDataObject = { name, type, targetIds };
 
 	if (additionalFields.scheduledInfo !== undefined) {
-		const scheduledInfo = processJsonInput(
+		const scheduledInfo = processJsonInput(this,
 			additionalFields.scheduledInfo,
 			'Scheduled Info',
 		) as IDataObject;
@@ -144,7 +144,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	}
 
 	if (additionalFields.options !== undefined) {
-		const options = processJsonInput(additionalFields.options, 'Options') as IDataObject;
+		const options = processJsonInput(this, additionalFields.options, 'Options') as IDataObject;
 		if (Object.keys(options).length > 0) {
 			params.options = options;
 		}

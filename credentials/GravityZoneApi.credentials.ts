@@ -11,7 +11,10 @@ export class GravityZoneApi implements ICredentialType {
 	name = 'gravityZoneApi';
 	displayName = 'Bitdefender GravityZone API';
 	documentationUrl = 'https://www.bitdefender.com/business/support/en/77212-125277-public-api.html';
-	icon: Icon = 'file:../nodes/GravityZone/gravityZone.svg';
+	icon: Icon = {
+		light: 'file:../nodes/GravityZone/gravityZone.svg',
+		dark: 'file:../nodes/GravityZone/gravityZone.dark.svg',
+	};
 
 	properties: INodeProperties[] = [
 		{

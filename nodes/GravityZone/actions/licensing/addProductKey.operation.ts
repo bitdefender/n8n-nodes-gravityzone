@@ -70,7 +70,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 		params.replaceIncompatibleKeys = options.replaceIncompatibleKeys;
 	}
 	if (options.mdrContactInformationJson !== undefined) {
-		const mdrContactInformation = processJsonInput(
+		const mdrContactInformation = processJsonInput(this,
 			options.mdrContactInformationJson,
 			'MDR Contact Information',
 		) as IDataObject;

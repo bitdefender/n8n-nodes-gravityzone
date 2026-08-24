@@ -106,19 +106,19 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	const params: IDataObject = { targetIds };
 
 	if (options.scheduler !== undefined) {
-		const scheduler = processJsonInput(options.scheduler, 'Scheduler') as IDataObject;
+		const scheduler = processJsonInput(this, options.scheduler, 'Scheduler') as IDataObject;
 		if (Object.keys(scheduler).length > 0) params.scheduler = scheduler;
 	}
 	if (options.modules !== undefined) {
-		const modules = processJsonInput(options.modules, 'Modules') as IDataObject;
+		const modules = processJsonInput(this, options.modules, 'Modules') as IDataObject;
 		if (Object.keys(modules).length > 0) params.modules = modules;
 	}
 	if (options.scanMode !== undefined) {
-		const scanMode = processJsonInput(options.scanMode, 'Scan Mode') as IDataObject;
+		const scanMode = processJsonInput(this, options.scanMode, 'Scan Mode') as IDataObject;
 		if (Object.keys(scanMode).length > 0) params.scanMode = scanMode;
 	}
 	if (options.roles !== undefined) {
-		const roles = processJsonInput(options.roles, 'Roles') as IDataObject;
+		const roles = processJsonInput(this, options.roles, 'Roles') as IDataObject;
 		if (Object.keys(roles).length > 0) params.roles = roles;
 	}
 	if (options.productType !== undefined) params.productType = options.productType;

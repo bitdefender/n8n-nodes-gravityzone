@@ -86,7 +86,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 	if (options.endpointId !== undefined && (options.endpointId as string) !== '')
 		params.endpointId = options.endpointId;
 	if (options.filters !== undefined) {
-		const filters = processJsonInput(options.filters, 'Filters') as IDataObject;
+		const filters = processJsonInput(this, options.filters, 'Filters') as IDataObject;
 		if (Object.keys(filters).length > 0) params.filters = filters;
 	}
 	if (options.page !== undefined) params.page = options.page;

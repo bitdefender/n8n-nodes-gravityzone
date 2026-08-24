@@ -148,19 +148,19 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 		params.description = options.description;
 	if (options.language !== undefined && options.language !== '') params.language = options.language;
 	if (options.modules !== undefined) {
-		params.modules = processJsonInput(options.modules, 'Modules') as IDataObject;
+		params.modules = processJsonInput(this, options.modules, 'Modules') as IDataObject;
 	}
 	if (options.scanMode !== undefined) {
-		params.scanMode = processJsonInput(options.scanMode, 'Scan Mode') as IDataObject;
+		params.scanMode = processJsonInput(this, options.scanMode, 'Scan Mode') as IDataObject;
 	}
 	if (options.settings !== undefined) {
-		params.settings = processJsonInput(options.settings, 'Settings') as IDataObject;
+		params.settings = processJsonInput(this, options.settings, 'Settings') as IDataObject;
 	}
 	if (options.roles !== undefined) {
-		params.roles = processJsonInput(options.roles, 'Roles') as IDataObject;
+		params.roles = processJsonInput(this, options.roles, 'Roles') as IDataObject;
 	}
 	if (options.deploymentOptions !== undefined) {
-		params.deploymentOptions = processJsonInput(
+		params.deploymentOptions = processJsonInput(this,
 			options.deploymentOptions,
 			'Deployment Options',
 		) as IDataObject;

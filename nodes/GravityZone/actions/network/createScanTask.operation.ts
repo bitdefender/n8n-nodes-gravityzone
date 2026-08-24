@@ -93,7 +93,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 
 	if (options.name !== undefined && (options.name as string) !== '') params.name = options.name;
 	if (options.customScanSettings !== undefined) {
-		const customScanSettings = processJsonInput(
+		const customScanSettings = processJsonInput(this,
 			options.customScanSettings,
 			'Custom Scan Settings',
 		) as IDataObject;

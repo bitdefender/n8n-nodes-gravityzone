@@ -90,7 +90,7 @@ export async function execute(this: IExecuteFunctions, i: number): Promise<INode
 
 	if (Object.keys(taskOptions).length > 0) params.options = taskOptions;
 	if (optionsInput.subtaskFilters !== undefined) {
-		const subtaskFilters = processJsonInput(
+		const subtaskFilters = processJsonInput(this,
 			optionsInput.subtaskFilters,
 			'Subtask Filters',
 		) as IDataObject;

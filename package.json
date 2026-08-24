@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-gravityzone",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Custom n8n node which models the Bitdefender GravityZone public API.",
     "license": "MIT",
     "homepage": "https://github.com/bitdefender/n8n-nodes-gravityzone",

@@ -35,6 +35,10 @@ export async function gravityZoneApiRequest(
 		timeout: 300_000, // 5 minutes
 	};
 
+	if (credentials.skipSsl === true) {
+		options.skipSslCertificateValidation = true;
+	}
+
 	const response = await this.helpers.httpRequestWithAuthentication.call(
 		this,
 		'gravityZoneApi',

@@ -37,6 +37,14 @@ export class GravityZoneApi implements ICredentialType {
 			description:
 				'The API key generated in the MyAccount section of the GravityZone Control Center',
 		},
+		{
+			displayName: 'Skip SSL Certificate Validation',
+			name: 'skipSsl',
+			type: 'boolean',
+			default: false,
+			description:
+				'Whether to skip SSL certificate validation. Enable this when connecting to an instance that uses a self-signed or otherwise untrusted certificate.',
+		},
 	];
 
 	async authenticate(
@@ -52,6 +60,10 @@ export class GravityZoneApi implements ICredentialType {
 			Authorization: `Basic ${encoded}`,
 		};
 
+		if (credentials.skipSsl === true) {
+			requestOptions.skipSslCertificateValidation = true;
+		}
+
 		return requestOptions;
 	}
 
@@ -60,6 +72,7 @@ export class GravityZoneApi implements ICredentialType {
 			method: 'POST',
 			baseURL: '={{$credentials.apiUrl}}',
 			url: '/v1.0/jsonrpc/general',
+			skipSslCertificateValidation: '={{$credentials.skipSsl}}',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
 				id: 'credential-test',
